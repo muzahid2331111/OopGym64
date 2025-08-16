@@ -18,7 +18,7 @@ public class DashBoard
     @Deprecated
     public void dietitianButtonOnClick(ActionEvent actionEvent) throws IOException {
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource(".fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Dietitan.fxml"));
         Scene scene = new Scene(root);
         stage.setTitle("Vogue Gold's Gym Lifestyle Lounge");
         stage.setScene(scene);
@@ -105,7 +105,7 @@ public class DashBoard
         stage.show();
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void backButtonOnClick(ActionEvent actionEvent) throws IOException{
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("DashBoard.fxml"));
@@ -125,7 +125,7 @@ public class DashBoard
         stage.show();
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void fitnessNutritionButtonOnClick(ActionEvent actionEvent) throws IOException{
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("DefineFitnessNutritionObjs.fxml"));
@@ -135,7 +135,7 @@ public class DashBoard
         stage.show();
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void updateProfileButtonOnClick(ActionEvent actionEvent) throws IOException{
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("UpdateClientProfile.fxml"));
@@ -145,7 +145,7 @@ public class DashBoard
         stage.show();
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void educateNutritionPrinciplesButtonOnClick(ActionEvent actionEvent) throws IOException{
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("EducateNutritionPrinciples.fxml"));
@@ -155,7 +155,7 @@ public class DashBoard
         stage.show();
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void coordinateWithGymButtonOnClick(ActionEvent actionEvent) throws IOException{
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("CoordinateWithTraining.fxml"));
@@ -165,7 +165,7 @@ public class DashBoard
         stage.show();
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void buildNutritionPlanButtonOnClick(ActionEvent actionEvent) throws IOException{
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("BuildNutritionPlan.fxml"));
@@ -175,7 +175,7 @@ public class DashBoard
         stage.show();
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void currentDietaryHabitsButtonOnClick(ActionEvent actionEvent) throws IOException{
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("AssesClientsDietaryHabiits.fxml"));
@@ -185,7 +185,7 @@ public class DashBoard
         stage.show();
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void trackProgressButtonOnClick(ActionEvent actionEvent) throws IOException{
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("TrackProgressAdjustPlan.fxml"));
@@ -194,7 +194,7 @@ public class DashBoard
         stage.setScene(scene);
         stage.show();
     }
-    @javafx.fxml.FXML
+    @Deprecated
     public void supplementStrategyButtonOnClick(ActionEvent actionEvent) throws IOException{
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("SupplementStrategy.fxml"));

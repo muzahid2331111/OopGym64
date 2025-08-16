@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="275.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oopgym64.HomePage.Login">
+   <children>
+      <TextField fx:id="enterEmailTextField" layoutX="62.0" layoutY="111.0" promptText="Enter email" />
+      <TextField fx:id="memberIDTextField" layoutX="62.0" layoutY="174.0" promptText="enter memberID" />
+      <TextField fx:id="passowardTextField" layoutX="62.0" layoutY="232.0" promptText="passoward" />
+      <Button layoutX="115.0" layoutY="283.0" mnemonicParsing="false" onAction="#loginProfileButtonOnClick" text="Login" />
+   </children>
+</AnchorPane>
