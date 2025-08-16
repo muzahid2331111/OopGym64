@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="485.0" prefWidth="450" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Receptionist.RespondToPhoneIquiriesController">
+<AnchorPane prefHeight="485.0" prefWidth="450" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oopgym64.Receptionist.RespondToPhoneIquiriesController">
     <children>
         <TextField fx:id="txtCallerName" layoutX="20.0" layoutY="117.0" promptText="Caller Name" />
         <Button layoutX="20.0" layoutY="309.0" onAction="#SearchButtonOnClick" text="Search Related Info" />

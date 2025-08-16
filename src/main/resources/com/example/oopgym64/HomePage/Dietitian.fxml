@@ -3,7 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="508.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HomePage.DashBoard">
+<AnchorPane prefHeight="508.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oopgym64.HomePage.DashBoard">
    <children>
       <Button layoutX="175.0" layoutY="40.0" mnemonicParsing="false" onAction="#currentDietaryHabitsButtonOnClick" prefHeight="26.0" prefWidth="228.0" text="Client's Current Dietary Habits" />
       <Button layoutX="175.0" layoutY="94.0" mnemonicParsing="false" onAction="#fitnessNutritionButtonOnClick" prefHeight="26.0" prefWidth="228.0" text="Fitness &amp; Nutrition Objectives" />
