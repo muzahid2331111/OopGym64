@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gym_simulation_2210345.controller.GroupClassesController">
+   <children>
+      <!-- Header -->
+      <HBox styleClass="header" alignment="CENTER_LEFT">
+         <padding>
+            <Insets top="15" right="20" bottom="15" left="20" />
+         </padding>
+         <children>
+            <Button text="← Back to Dashboard" onAction="#handleBackToDashboard" styleClass="back-button" />
+            <Label text="Group Classes Management" styleClass="page-title" />
+         </children>
+      </HBox>
+      
+      <!-- Main Content -->
+      <HBox spacing="20" styleClass="classes-container">
+         <padding>
+            <Insets top="20" right="20" bottom="20" left="20" />
+         </padding>
+         
+         <!-- Available Classes -->
+         <VBox spacing="15" HBox.hgrow="ALWAYS" styleClass="class-section">
+            <Label text="Available Classes" styleClass="section-title" />
+            
+            <!-- Class Filter -->
+            <HBox spacing="15" alignment="CENTER_LEFT">
+               <Label text="Filter by:" />
+               <ComboBox fx:id="filterCombo" prefWidth="120" />
+               <TextField fx:id="searchField" promptText="Search classes..." prefWidth="200" />
+               <Button text="Search" onAction="#handleSearch" styleClass="secondary-button" />
+            </HBox>
+            
+            <ListView fx:id="availableClassesList" prefHeight="400" />
+            <Label fx:id="classCountLabel" text="0 classes available" styleClass="count-label" />
+            
+            <HBox spacing="10" alignment="CENTER">
+               <Button fx:id="joinClassButton" text="Join Class" onAction="#handleJoinClass" styleClass="primary-button" />
+               <Button fx:id="viewClassDetailsButton" text="View Details" onAction="#handleViewClassDetails" styleClass="secondary-button" />
+            </HBox>
+         </VBox>
+         
+         <!-- Enrolled Classes -->
+         <VBox spacing="15" HBox.hgrow="ALWAYS" styleClass="class-section">
+            <Label text="Your Enrolled Classes" styleClass="section-title" />
+            
+            <ListView fx:id="enrolledClassesList" prefHeight="400" />
+            <Label fx:id="enrolledCountLabel" text="0 classes enrolled" styleClass="count-label" />
+            
+            <HBox spacing="10" alignment="CENTER">
+               <Button fx:id="leaveClassButton" text="Leave Class" onAction="#handleLeaveClass" styleClass="danger-button" />
+               <Button fx:id="viewScheduleButton" text="View Schedule" onAction="#handleViewSchedule" styleClass="secondary-button" />
+            </HBox>
+         </VBox>
+      </HBox>
+      
+      <!-- Class Details Modal -->
+      <VBox fx:id="classDetailsBox" spacing="15" styleClass="modal-box" visible="false">
+         <Label text="Class Details" styleClass="section-title" />
+         <VBox fx:id="classDetailsContent" spacing="10" />
+         <HBox spacing="15" alignment="CENTER">
+            <Button fx:id="closeDetailsButton" text="Close" onAction="#handleCloseDetails" styleClass="secondary-button" />
+            <Button fx:id="joinFromDetailsButton" text="Join This Class" onAction="#handleJoinFromDetails" styleClass="primary-button" />
+         </HBox>
+      </VBox>
+      
+      <!-- Status Messages -->
+      <Label fx:id="statusLabel" text="" styleClass="status-label" />
+   </children>
+   
+   <stylesheets>
+      <String fx:value="styles.css" />
+   </stylesheets>
+</VBox>

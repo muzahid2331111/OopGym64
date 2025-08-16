@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gym_simulation_2210345.controller.SessionBookingController">
+   <children>
+      <!-- Header -->
+      <HBox styleClass="header" alignment="CENTER_LEFT">
+         <padding>
+            <Insets top="15" right="20" bottom="15" left="20" />
+         </padding>
+         <children>
+            <Button text="← Back to Dashboard" onAction="#handleBackToDashboard" styleClass="back-button" />
+            <Label text="Book Your Gym Session" styleClass="page-title" />
+         </children>
+      </HBox>
+      
+      <!-- Main Content -->
+      <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+         <content>
+            <VBox spacing="25" alignment="CENTER" styleClass="form-container">
+               <padding>
+                  <Insets top="30" right="40" bottom="30" left="40" />
+               </padding>
+               
+               <!-- Session Details Form -->
+               <VBox spacing="20" styleClass="form-section">
+                  <Label text="Session Details" styleClass="section-title" />
+                  
+                  <GridPane hgap="20" vgap="15" alignment="CENTER">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="NEVER" minWidth="120" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="250" />
+                     </columnConstraints>
+                     
+                     <Label text="Session Type:" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="form-label" />
+                     <ComboBox fx:id="sessionTypeCombo" prefWidth="250" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                     
+                     <Label text="Date:" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="form-label" />
+                     <DatePicker fx:id="sessionDatePicker" prefWidth="250" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                     
+                     <Label text="Time:" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="form-label" />
+                     <ComboBox fx:id="sessionTimeCombo" prefWidth="250" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                     
+                     <Label text="Duration:" GridPane.columnIndex="0" GridPane.rowIndex="3" styleClass="form-label" />
+                     <ComboBox fx:id="durationCombo" prefWidth="250" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                     
+                     <Label text="Notes:" GridPane.columnIndex="0" GridPane.rowIndex="4" styleClass="form-label" />
+                     <TextArea fx:id="notesArea" promptText="Any special requirements or notes..." prefWidth="250" prefHeight="80" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  </GridPane>
+               </VBox>
+               
+               <!-- Available Slots -->
+               <VBox spacing="15" styleClass="form-section">
+                  <Label text="Available Time Slots" styleClass="section-title" />
+                  <ListView fx:id="availableSlotsList" prefHeight="200" />
+                  <Label text="Select a time slot from above or choose custom time" styleClass="help-text" />
+               </VBox>
+               
+               <!-- Action Buttons -->
+               <HBox spacing="20" alignment="CENTER">
+                  <Button fx:id="checkAvailabilityButton" text="Check Availability" onAction="#handleCheckAvailability" styleClass="secondary-button" />
+                  <Button fx:id="bookSessionButton" text="Book Session" onAction="#handleBookSession" styleClass="primary-button" />
+               </HBox>
+               
+               <!-- Status Messages -->
+               <Label fx:id="statusLabel" text="" styleClass="status-label" />
+               
+               <!-- Booking Summary -->
+               <VBox fx:id="bookingSummaryBox" spacing="10" styleClass="summary-box" visible="false">
+                  <Label text="Booking Summary" styleClass="section-title" />
+                  <VBox fx:id="summaryContent" spacing="5" />
+                  <Button text="Confirm Booking" onAction="#handleConfirmBooking" styleClass="success-button" />
+               </VBox>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </children>
+   
+   <stylesheets>
+      <String fx:value="styles.css" />
+   </stylesheets>
+</VBox>

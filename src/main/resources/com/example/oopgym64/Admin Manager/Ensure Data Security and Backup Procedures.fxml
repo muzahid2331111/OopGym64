@@ -31,4 +31,9 @@
     <Label text="Compliance:" layoutX="14.0" layoutY="280.0"/>
     <ProgressBar fx:id="complianceBar" layoutX="90.0" layoutY="278.0" prefWidth="200.0"/>
 
+    <!-- Buttons -->
+    <Button fx:id="btnFlag" layoutX="14.0" layoutY="320.0" text="Flag Selected" />
+    <Button fx:id="btnExport" layoutX="120.0" layoutY="320.0" text="Export" />
+    <Button fx:id="backButtonOnClick" layoutX="510.0" layoutY="345.0" mnemonicParsing="false" text="Back" />
+
 </AnchorPane>

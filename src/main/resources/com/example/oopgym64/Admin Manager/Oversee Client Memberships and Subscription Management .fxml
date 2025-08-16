@@ -45,4 +45,9 @@
     <Label fx:id="summaryLabel" layoutX="20.0" layoutY="420.0"
            text="Status: Ready" style="-fx-text-fill: gray;"/>
 
+    <!-- Buttons -->
+    <Button fx:id="btnFlag" layoutX="14.0" layoutY="320.0" text="Flag Selected" />
+    <Button fx:id="btnExport" layoutX="120.0" layoutY="320.0" text="Export" />
+    <Button fx:id="backButtonOnClick" layoutX="510.0" layoutY="345.0" mnemonicParsing="false" text="Back" />
+
 </AnchorPane>

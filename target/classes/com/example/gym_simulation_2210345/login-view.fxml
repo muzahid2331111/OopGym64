@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox alignment="CENTER" spacing="20" styleClass="main-container" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gym_simulation_2210345.controller.LoginController">
+   <children>
+      <Label text="Gym Simulation System" styleClass="title-label" />
+      <Label text="Welcome to the Ultimate Fitness Experience" styleClass="subtitle-label" />
+      
+      <TabPane fx:id="tabPane" prefWidth="400" prefHeight="400">
+         <tabs>
+            <Tab text="Login" closable="false">
+               <content>
+                  <VBox spacing="15" alignment="CENTER" styleClass="form-container">
+                     <padding>
+                        <Insets top="20" right="20" bottom="20" left="20" />
+                     </padding>
+                     
+                     <Label text="Sign In to Your Account" styleClass="section-title" />
+                     
+                     <TextField fx:id="emailField" promptText="Email Address" prefWidth="300" />
+                     <PasswordField fx:id="passwordField" promptText="Password" prefWidth="300" />
+                     
+                     <Button fx:id="loginButton" text="Login" onAction="#handleLogin" styleClass="primary-button" />
+                     
+                     <Label fx:id="statusLabel" text="" styleClass="status-label" />
+                     
+                     <HBox spacing="10" alignment="CENTER">
+                        <Label text="Test Accounts:" />
+                        <Label text="Basic: john@example.com / password123" styleClass="test-account" />
+                        <Label text="Premium: jane@example.com / password123" styleClass="test-account" />
+                     </HBox>
+                  </VBox>
+               </content>
+            </Tab>
+            
+            <Tab text="Register" closable="false">
+               <content>
+                  <VBox spacing="15" alignment="CENTER" styleClass="form-container">
+                     <padding>
+                        <Insets top="20" right="20" bottom="20" left="20" />
+                     </padding>
+                     
+                     <Label text="Create New Account" styleClass="section-title" />
+                     
+                     <TextField fx:id="regNameField" promptText="Full Name" prefWidth="300" />
+                     <TextField fx:id="regEmailField" promptText="Email Address" prefWidth="300" />
+                     <PasswordField fx:id="regPasswordField" promptText="Password" prefWidth="300" />
+                     
+                     <HBox spacing="10" alignment="CENTER">
+                        <Label text="Membership Type:" />
+                        <ComboBox fx:id="membershipTypeCombo" prefWidth="150" />
+                     </HBox>
+                     
+                     <Button fx:id="registerButton" text="Register" onAction="#handleRegister" styleClass="primary-button" />
+                     
+                     <Label fx:id="regStatusLabel" text="" styleClass="status-label" />
+                  </VBox>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </children>
+   
+   <stylesheets>
+      <String fx:value="styles.css" />
+   </stylesheets>
+</VBox>

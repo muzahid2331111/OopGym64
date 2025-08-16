@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gym_simulation_2210345.controller.ProgressTrackingController">
+   <children>
+      <!-- Header -->
+      <HBox styleClass="header" alignment="CENTER_LEFT">
+         <padding>
+            <Insets top="15" right="20" bottom="15" left="20" />
+         </padding>
+         <children>
+            <Button text="← Back to Dashboard" onAction="#handleBackToDashboard" styleClass="back-button" />
+            <Label text="Progress Tracking & Analytics" styleClass="page-title" />
+         </children>
+      </HBox>
+      
+      <!-- Main Content -->
+      <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+         <content>
+            <VBox spacing="25" styleClass="progress-container">
+               <padding>
+                  <Insets top="20" right="20" bottom="20" left="20" />
+               </padding>
+               
+               <!-- Date Range Selection -->
+               <VBox spacing="15" styleClass="date-section">
+                  <Label text="Select Date Range" styleClass="section-title" />
+                  
+                  <HBox spacing="20" alignment="CENTER">
+                     <VBox spacing="5">
+                        <Label text="From Date:" styleClass="form-label" />
+                        <DatePicker fx:id="startDatePicker" />
+                     </VBox>
+                     <VBox spacing="5">
+                        <Label text="To Date:" styleClass="form-label" />
+                        <DatePicker fx:id="endDatePicker" />
+                     </VBox>
+                     <VBox spacing="5">
+                        <Label text="Quick Select:" styleClass="form-label" />
+                        <ComboBox fx:id="quickSelectCombo" prefWidth="120" />
+                     </VBox>
+                     <Button text="Generate Report" onAction="#handleGenerateReport" styleClass="primary-button" />
+                  </HBox>
+               </VBox>
+               
+               <!-- Progress Summary -->
+               <VBox fx:id="progressSummarySection" spacing="15" styleClass="summary-section" visible="false">
+                  <Label text="Progress Summary" styleClass="section-title" />
+                  
+                  <GridPane hgap="20" vgap="15" styleClass="summary-grid">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="200" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="200" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="200" />
+                     </columnConstraints>
+                     
+                     <VBox styleClass="summary-card" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                        <Label text="Total Sessions" styleClass="metric-label" />
+                        <Label fx:id="totalSessionsLabel" text="0" styleClass="metric-value" />
+                     </VBox>
+                     
+                     <VBox styleClass="summary-card" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                        <Label text="Total Hours" styleClass="metric-label" />
+                        <Label fx:id="totalHoursLabel" text="0" styleClass="metric-value" />
+                     </VBox>
+                     
+                     <VBox styleClass="summary-card" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                        <Label text="Classes Attended" styleClass="metric-label" />
+                        <Label fx:id="classesAttendedLabel" text="0" styleClass="metric-value" />
+                     </VBox>
+                     
+                     <VBox styleClass="summary-card" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                        <Label text="Consistency Score" styleClass="metric-label" />
+                        <Label fx:id="consistencyLabel" text="0%" styleClass="metric-value" />
+                     </VBox>
+                     
+                     <VBox styleClass="summary-card" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <Label text="Goal Progress" styleClass="metric-label" />
+                        <Label fx:id="goalProgressLabel" text="0%" styleClass="metric-value" />
+                     </VBox>
+                     
+                     <VBox styleClass="summary-card" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                        <Label text="Streak" styleClass="metric-label" />
+                        <Label fx:id="streakLabel" text="0 days" styleClass="metric-value" />
+                     </VBox>
+                  </GridPane>
+               </VBox>
+               
+               <!-- Detailed Progress -->
+               <VBox spacing="15" styleClass="progress-section">
+                  <Label text="Detailed Progress" styleClass="section-title" />
+                  
+                  <TabPane fx:id="progressTabPane" prefHeight="400">
+                     <tabs>
+                        <Tab text="Workout History" closable="false">
+                           <content>
+                              <VBox spacing="15">
+                                 <HBox spacing="15" alignment="CENTER_LEFT">
+                                    <Label text="Filter by:" />
+                                    <ComboBox fx:id="sessionFilterCombo" prefWidth="120" />
+                                    <Button text="Export Data" onAction="#handleExportData" styleClass="secondary-button" />
+                                 </HBox>
+                                 <TableView fx:id="workoutHistoryTable" prefHeight="300" />
+                              </VBox>
+                           </content>
+                        </Tab>
+                        
+                        <Tab text="Class Attendance" closable="false">
+                           <content>
+                              <VBox spacing="15">
+                                 <VBox fx:id="classAttendanceBox" spacing="10" />
+                                 <HBox spacing="15" alignment="CENTER">
+                                    <Button text="View Class Schedule" onAction="#handleViewClassSchedule" styleClass="secondary-button" />
+                                    <Button text="Attendance Report" onAction="#handleAttendanceReport" styleClass="secondary-button" />
+                                 </HBox>
+                              </VBox>
+                           </content>
+                        </Tab>
+                        
+                        <Tab text="Fitness Metrics" closable="false">
+                           <content>
+                              <VBox spacing="15">
+                                 <GridPane hgap="20" vgap="15">
+                                    <columnConstraints>
+                                       <ColumnConstraints hgrow="NEVER" minWidth="120" />
+                                       <ColumnConstraints hgrow="SOMETIMES" minWidth="200" />
+                                    </columnConstraints>
+                                    
+                                    <Label text="Weight (kg):" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="form-label" />
+                                    <TextField fx:id="weightField" prefWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                                    
+                                    <Label text="Body Fat %:" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="form-label" />
+                                    <TextField fx:id="bodyFatField" prefWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    
+                                    <Label text="Muscle Mass (kg):" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="form-label" />
+                                    <TextField fx:id="muscleMassField" prefWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                     
+                                    <Label text="Notes:" GridPane.columnIndex="0" GridPane.rowIndex="3" styleClass="form-label" />
+                                    <TextArea fx:id="metricsNotesArea" promptText="Add notes about your measurements..." prefWidth="200" prefHeight="80" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                 </GridPane>
+                                 
+                                 <HBox spacing="15" alignment="CENTER">
+                                    <Button text="Save Metrics" onAction="#handleSaveMetrics" styleClass="primary-button" />
+                                    <Button text="View Trends" onAction="#handleViewTrends" styleClass="secondary-button" />
+                                 </HBox>
+                              </VBox>
+                           </content>
+                        </Tab>
+                        
+                        <Tab text="Goals & Achievements" closable="false">
+                           <content>
+                              <VBox spacing="15">
+                                 <VBox fx:id="goalsBox" spacing="10" />
+                                 <HBox spacing="15" alignment="CENTER">
+                                    <Button text="Add New Goal" onAction="#handleAddGoal" styleClass="primary-button" />
+                                    <Button text="Mark Achievement" onAction="#handleMarkAchievement" styleClass="success-button" />
+                                 </HBox>
+                              </VBox>
+                           </content>
+                        </Tab>
+                     </tabs>
+                  </TabPane>
+               </VBox>
+               
+               <!-- Charts and Visualizations -->
+               <VBox fx:id="chartsSection" spacing="15" styleClass="charts-section" visible="false">
+                  <Label text="Progress Charts" styleClass="section-title" />
+                  
+                  <HBox spacing="20" styleClass="charts-container">
+                     <VBox styleClass="chart-card" HBox.hgrow="ALWAYS">
+                        <Label text="Weekly Activity" styleClass="chart-title" />
+                        <VBox fx:id="weeklyChartBox" styleClass="chart-box" />
+                     </VBox>
+                     
+                     <VBox styleClass="chart-card" HBox.hgrow="ALWAYS">
+                        <Label text="Goal Progress" styleClass="chart-title" />
+                        <VBox fx:id="goalChartBox" styleClass="chart-box" />
+                     </VBox>
+                  </HBox>
+               </VBox>
+               
+               <!-- Action Buttons -->
+               <HBox spacing="15" alignment="CENTER">
+                  <Button text="Print Report" onAction="#handlePrintReport" styleClass="secondary-button" />
+                  <Button text="Share Progress" onAction="#handleShareProgress" styleClass="secondary-button" />
+                  <Button text="Set New Goals" onAction="#handleSetNewGoals" styleClass="primary-button" />
+               </HBox>
+               
+               <!-- Status Messages -->
+               <Label fx:id="statusLabel" text="" styleClass="status-label" />
+            </VBox>
+         </content>
+      </ScrollPane>
+   </children>
+</VBox>

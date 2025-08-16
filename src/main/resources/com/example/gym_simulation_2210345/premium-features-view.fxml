@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gym_simulation_2210345.controller.PremiumFeaturesController">
+   <children>
+      <!-- Header -->
+      <HBox styleClass="header" alignment="CENTER_LEFT">
+         <padding>
+            <Insets top="15" right="20" bottom="15" left="20" />
+         </padding>
+         <children>
+            <Button text="← Back to Dashboard" onAction="#handleBackToDashboard" styleClass="back-button" />
+            <Label text="Premium Features" styleClass="page-title" />
+            <Label text="Exclusive Premium Services" styleClass="subtitle-label" />
+         </children>
+      </HBox>
+      
+      <!-- Main Content -->
+      <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+         <content>
+            <VBox spacing="25" styleClass="premium-container">
+               <padding>
+                  <Insets top="20" right="20" bottom="20" left="20" />
+               </padding>
+               
+               <!-- Personal Training Section -->
+               <VBox spacing="15" styleClass="premium-section">
+                  <Label text="Personal Training" styleClass="section-title" />
+                  <Label text="Book 1-on-1 sessions with certified personal trainers" styleClass="section-description" />
+                  
+                  <GridPane hgap="20" vgap="15" alignment="CENTER_LEFT">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="NEVER" minWidth="120" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="250" />
+                        <ColumnConstraints hgrow="NEVER" minWidth="120" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="250" />
+                     </columnConstraints>
+                     
+                     <Label text="Trainer:" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="form-label" />
+                     <ComboBox fx:id="trainerCombo" prefWidth="250" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                     
+                     <Label text="Training Type:" GridPane.columnIndex="2" GridPane.rowIndex="0" styleClass="form-label" />
+                     <ComboBox fx:id="trainingTypeCombo" prefWidth="250" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+                     
+                     <Label text="Date:" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="form-label" />
+                     <DatePicker fx:id="ptDatePicker" prefWidth="250" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                     
+                     <Label text="Time:" GridPane.columnIndex="2" GridPane.rowIndex="1" styleClass="form-label" />
+                     <ComboBox fx:id="ptTimeCombo" prefWidth="250" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                     
+                     <Label text="Duration:" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="form-label" />
+                     <ComboBox fx:id="ptDurationCombo" prefWidth="250" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                     
+                     <Label text="Special Requirements:" GridPane.columnIndex="2" GridPane.rowIndex="2" styleClass="form-label" />
+                     <TextArea fx:id="ptRequirementsArea" promptText="Any special requirements or goals..." prefWidth="250" prefHeight="60" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  </GridPane>
+                  
+                  <HBox spacing="15" alignment="CENTER">
+                     <Button fx:id="checkTrainerAvailabilityButton" text="Check Availability" onAction="#handleCheckTrainerAvailability" styleClass="secondary-button" />
+                     <Button fx:id="bookPTButton" text="Book Personal Training" onAction="#handleBookPersonalTraining" styleClass="premium-button" />
+                  </HBox>
+                  
+                  <!-- Trainer Profiles -->
+                  <VBox spacing="10" styleClass="trainer-profiles">
+                     <Label text="Available Trainers" styleClass="subsection-title" />
+                     <HBox spacing="20" styleClass="trainers-grid">
+                        <VBox fx:id="trainer1Card" styleClass="trainer-card" HBox.hgrow="ALWAYS">
+                           <Label text="Sarah Johnson" styleClass="trainer-name" />
+                           <Label text="Strength & Conditioning" styleClass="trainer-specialty" />
+                           <Label text="5+ years experience" styleClass="trainer-experience" />
+                           <Button text="View Profile" onAction="#handleViewTrainerProfile" styleClass="secondary-button" />
+                        </VBox>
+                        <VBox fx:id="trainer2Card" styleClass="trainer-card" HBox.hgrow="ALWAYS">
+                           <Label text="Mike Chen" styleClass="trainer-name" />
+                           <Label text="Cardio & HIIT" styleClass="trainer-specialty" />
+                           <Label text="3+ years experience" styleClass="trainer-experience" />
+                           <Button text="View Profile" onAction="#handleViewTrainerProfile" styleClass="secondary-button" />
+                        </VBox>
+                        <VBox fx:id="trainer3Card" styleClass="trainer-card" HBox.hgrow="ALWAYS">
+                           <Label text="Emma Rodriguez" styleClass="trainer-name" />
+                           <Label text="Yoga & Flexibility" styleClass="trainer-specialty" />
+                           <Label text="7+ years experience" styleClass="trainer-experience" />
+                           <Button text="View Profile" onAction="#handleViewTrainerProfile" styleClass="secondary-button" />
+                        </VBox>
+                     </HBox>
+                  </VBox>
+               </VBox>
+               
+               <Separator />
+               
+               <!-- Wellness Lounge Section -->
+               <VBox spacing="15" styleClass="premium-section">
+                  <Label text="Wellness Lounge" styleClass="section-title" />
+                  <Label text="Relax and rejuvenate with premium wellness services" styleClass="section-description" />
+                  
+                  <GridPane hgap="20" vgap="15" alignment="CENTER_LEFT">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="NEVER" minWidth="120" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="250" />
+                        <ColumnConstraints hgrow="NEVER" minWidth="120" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="250" />
+                     </columnConstraints>
+                     
+                     <Label text="Service:" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="form-label" />
+                     <ComboBox fx:id="wellnessServiceCombo" prefWidth="250" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                     
+                     <Label text="Duration:" GridPane.columnIndex="2" GridPane.rowIndex="0" styleClass="form-label" />
+                     <ComboBox fx:id="wellnessDurationCombo" prefWidth="250" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+                     
+                     <Label text="Date:" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="form-label" />
+                     <DatePicker fx:id="wellnessDatePicker" prefWidth="250" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                     
+                     <Label text="Time:" GridPane.columnIndex="2" GridPane.rowIndex="1" styleClass="form-label" />
+                     <ComboBox fx:id="wellnessTimeCombo" prefWidth="250" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                     
+                     <Label text="Special Requests:" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="form-label" />
+                     <TextArea fx:id="wellnessRequestsArea" promptText="Any special requests or preferences..." prefWidth="250" prefHeight="60" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  </GridPane>
+                  
+                  <HBox spacing="15" alignment="CENTER">
+                     <Button fx:id="checkWellnessAvailabilityButton" text="Check Availability" onAction="#handleCheckWellnessAvailability" styleClass="secondary-button" />
+                     <Button fx:id="bookWellnessButton" text="Book Wellness Service" onAction="#handleBookWellness" styleClass="premium-button" />
+                  </HBox>
+                  
+                  <!-- Available Services -->
+                  <VBox spacing="10" styleClass="wellness-services">
+                     <Label text="Available Services" styleClass="subsection-title" />
+                     <HBox spacing="20" styleClass="services-grid">
+                        <VBox styleClass="service-card" HBox.hgrow="ALWAYS">
+                           <Label text="Sauna Session" styleClass="service-name" />
+                           <Label text="30 min - $25" styleClass="service-duration" />
+                           <Label text="Relaxing heat therapy" styleClass="service-description" />
+                        </VBox>
+                        <VBox styleClass="service-card" HBox.hgrow="ALWAYS">
+                           <Label text="Massage Therapy" styleClass="service-name" />
+                           <Label text="60 min - $80" styleClass="service-duration" />
+                           <Label text="Professional massage" styleClass="service-description" />
+                        </VBox>
+                        <VBox styleClass="service-card" HBox.hgrow="ALWAYS">
+                           <Label text="Steam Room" styleClass="service-name" />
+                           <Label text="20 min - $15" styleClass="service-duration" />
+                           <Label text="Detoxifying steam" styleClass="service-description" />
+                        </VBox>
+                        <VBox styleClass="service-card" HBox.hgrow="ALWAYS">
+                           <Label text="Hot Tub" styleClass="service-name" />
+                           <Label text="45 min - $30" styleClass="service-duration" />
+                           <Label text="Therapeutic relaxation" styleClass="service-description" />
+                        </VBox>
+                     </HBox>
+                  </VBox>
+               </VBox>
+               
+               <Separator />
+               
+               <!-- Supplement Tracking Section -->
+               <VBox spacing="15" styleClass="premium-section">
+                  <Label text="Supplement Tracking" styleClass="section-title" />
+                  <Label text="Monitor your supplement intake and timing for optimal results" styleClass="section-description" />
+                  
+                  <HBox spacing="20" styleClass="supplement-input">
+                     <VBox spacing="10" HBox.hgrow="ALWAYS">
+                        <Label text="Supplement Name:" styleClass="form-label" />
+                        <TextField fx:id="supplementNameField" promptText="e.g., Protein Powder, Creatine" />
+                     </VBox>
+                     <VBox spacing="10" HBox.hgrow="ALWAYS">
+                        <Label text="Dosage:" styleClass="form-label" />
+                        <TextField fx:id="dosageField" promptText="e.g., 30g, 5g" />
+                     </VBox>
+                     <VBox spacing="10" HBox.hgrow="ALWAYS">
+                        <Label text="Time:" styleClass="form-label" />
+                        <ComboBox fx:id="supplementTimeCombo" />
+                     </VBox>
+                  </HBox>
+                  
+                  <TextArea fx:id="supplementLogArea" promptText="Add notes about your supplement intake, effects, or any side effects..." prefHeight="100" />
+                  
+                  <HBox spacing="15" alignment="CENTER">
+                     <Button fx:id="addSupplementButton" text="Add Supplement Log" onAction="#handleAddSupplement" styleClass="secondary-button" />
+                     <Button fx:id="viewSupplementHistoryButton" text="View History" onAction="#handleViewSupplementHistory" styleClass="secondary-button" />
+                  </HBox>
+                  
+                  <!-- Supplement History -->
+                  <VBox fx:id="supplementHistoryBox" spacing="10" styleClass="supplement-history" visible="false">
+                     <Label text="Recent Supplement Logs" styleClass="subsection-title" />
+                     <ListView fx:id="supplementHistoryList" prefHeight="200" />
+                  </VBox>
+               </VBox>
+               
+               <Separator />
+               
+               <!-- Advanced Goal Setting Section -->
+               <VBox spacing="15" styleClass="premium-section">
+                  <Label text="Advanced Goal Setting" styleClass="section-title" />
+                  <Label text="Set and track detailed fitness goals with AI assistance" styleClass="section-description" />
+                  
+                  <GridPane hgap="20" vgap="15" alignment="CENTER_LEFT">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="NEVER" minWidth="120" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="300" />
+                     </columnConstraints>
+                     
+                     <Label text="Goal Type:" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="form-label" />
+                     <ComboBox fx:id="goalTypeCombo" prefWidth="300" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                     
+                     <Label text="Target Value:" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="form-label" />
+                     <TextField fx:id="targetValueField" promptText="e.g., 80kg, 15 pull-ups, 5km in 25min" prefWidth="300" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                     
+                     <Label text="Timeline:" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="form-label" />
+                     <ComboBox fx:id="timelineCombo" prefWidth="300" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                     
+                     <Label text="Priority Level:" GridPane.columnIndex="0" GridPane.rowIndex="3" styleClass="form-label" />
+                     <ComboBox fx:id="priorityCombo" prefWidth="300" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                     
+                     <Label text="Goal Description:" GridPane.columnIndex="0" GridPane.rowIndex="4" styleClass="form-label" />
+                     <TextArea fx:id="goalDescriptionArea" promptText="Describe your goal in detail..." prefWidth="300" prefHeight="80" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  </GridPane>
+                  
+                  <HBox spacing="15" alignment="CENTER">
+                     <Button fx:id="addGoalButton" text="Add Goal" onAction="#handleAddGoal" styleClass="primary-button" />
+                     <Button fx:id="generateAIGoalButton" text="Generate AI Goal" onAction="#handleGenerateAIGoal" styleClass="ai-button" />
+                     <Button fx:id="viewGoalsButton" text="View All Goals" onAction="#handleViewGoals" styleClass="secondary-button" />
+                  </HBox>
+                  
+                  <!-- Current Goals -->
+                  <VBox fx:id="currentGoalsBox" spacing="10" styleClass="current-goals" visible="false">
+                     <Label text="Current Goals" styleClass="subsection-title" />
+                     <VBox fx:id="goalsList" spacing="8" />
+                  </VBox>
+               </VBox>
+               
+               <!-- Action Buttons -->
+               <HBox spacing="15" alignment="CENTER">
+                  <Button text="View All Bookings" onAction="#handleViewAllBookings" styleClass="secondary-button" />
+                  <Button text="Export Data" onAction="#handleExportData" styleClass="secondary-button" />
+                  <Button text="Contact Support" onAction="#handleContactSupport" styleClass="secondary-button" />
+               </HBox>
+               
+               <!-- Status Messages -->
+               <Label fx:id="statusLabel" text="" styleClass="status-label" />
+            </VBox>
+         </content>
+      </ScrollPane>
+   </children>
+</VBox>

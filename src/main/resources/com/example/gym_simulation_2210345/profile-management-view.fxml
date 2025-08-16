@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gym_simulation_2210345.controller.ProfileManagementController">
+   <children>
+      <!-- Header -->
+      <HBox styleClass="header" alignment="CENTER_LEFT">
+         <padding>
+            <Insets top="15" right="20" bottom="15" left="20" />
+         </padding>
+         <children>
+            <Button text="← Back to Dashboard" onAction="#handleBackToDashboard" styleClass="back-button" />
+            <Label text="Profile Management" styleClass="page-title" />
+         </children>
+      </HBox>
+      
+      <!-- Main Content -->
+      <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+         <content>
+            <VBox spacing="25" styleClass="profile-container">
+               <padding>
+                  <Insets top="20" right="20" bottom="20" left="20" />
+               </padding>
+               
+               <!-- Personal Information -->
+               <VBox spacing="15" styleClass="profile-section">
+                  <Label text="Personal Information" styleClass="section-title" />
+                  
+                  <GridPane hgap="20" vgap="15" alignment="CENTER_LEFT">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="NEVER" minWidth="120" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="250" />
+                        <ColumnConstraints hgrow="NEVER" minWidth="120" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="250" />
+                     </columnConstraints>
+                     
+                     <Label text="First Name:" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="form-label" />
+                     <TextField fx:id="firstNameField" prefWidth="250" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                     
+                     <Label text="Last Name:" GridPane.columnIndex="2" GridPane.rowIndex="0" styleClass="form-label" />
+                     <TextField fx:id="lastNameField" prefWidth="250" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+                     
+                     <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="form-label" />
+                     <TextField fx:id="emailField" prefWidth="250" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                     
+                     <Label text="Phone:" GridPane.columnIndex="2" GridPane.rowIndex="1" styleClass="form-label" />
+                     <TextField fx:id="phoneField" prefWidth="250" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                     
+                     <Label text="Date of Birth:" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="form-label" />
+                     <DatePicker fx:id="dateOfBirthPicker" prefWidth="250" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                     
+                     <Label text="Gender:" GridPane.columnIndex="2" GridPane.rowIndex="2" styleClass="form-label" />
+                     <ComboBox fx:id="genderCombo" prefWidth="250" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                     
+                     <Label text="Address:" GridPane.columnIndex="0" GridPane.rowIndex="3" styleClass="form-label" />
+                     <TextArea fx:id="addressArea" promptText="Enter your full address" prefWidth="250" prefHeight="60" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                     
+                     <Label text="Emergency Contact:" GridPane.columnIndex="2" GridPane.rowIndex="3" styleClass="form-label" />
+                     <TextField fx:id="emergencyContactField" prefWidth="250" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                  </GridPane>
+               </VBox>
+               
+               <!-- Fitness Profile -->
+               <VBox spacing="15" styleClass="profile-section">
+                  <Label text="Fitness Profile" styleClass="section-title" />
+                  
+                  <GridPane hgap="20" vgap="15" alignment="CENTER_LEFT">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="NEVER" minWidth="120" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="200" />
+                        <ColumnConstraints hgrow="NEVER" minWidth="120" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="200" />
+                     </columnConstraints>
+                     
+                     <Label text="Height (cm):" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="form-label" />
+                     <TextField fx:id="heightField" prefWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                     
+                     <Label text="Weight (kg):" GridPane.columnIndex="2" GridPane.rowIndex="0" styleClass="form-label" />
+                     <TextField fx:id="weightField" prefWidth="200" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+                     
+                     <Label text="Body Fat %:" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="form-label" />
+                     <TextField fx:id="bodyFatField" prefWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                     
+                     <Label text="Muscle Mass (kg):" GridPane.columnIndex="2" GridPane.rowIndex="1" styleClass="form-label" />
+                     <TextField fx:id="muscleMassField" prefWidth="200" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                     
+                     <Label text="Activity Level:" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="form-label" />
+                     <ComboBox fx:id="activityLevelCombo" prefWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                     
+                     <Label text="Experience Level:" GridPane.columnIndex="2" GridPane.rowIndex="2" styleClass="form-label" />
+                     <ComboBox fx:id="experienceLevelCombo" prefWidth="200" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                     
+                     <Label text="Medical Conditions:" GridPane.columnIndex="0" GridPane.rowIndex="3" styleClass="form-label" />
+                     <TextArea fx:id="medicalConditionsArea" promptText="List any medical conditions or injuries..." prefWidth="200" prefHeight="60" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                     
+                     <Label text="Allergies:" GridPane.columnIndex="2" GridPane.rowIndex="3" styleClass="form-label" />
+                     <TextArea fx:id="allergiesArea" promptText="List any allergies..." prefWidth="200" prefHeight="60" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                  </GridPane>
+               </VBox>
+               
+               <!-- Fitness Goals -->
+               <VBox spacing="15" styleClass="profile-section">
+                  <Label text="Fitness Goals" styleClass="section-title" />
+                  
+                  <VBox spacing="10">
+                     <HBox spacing="15" alignment="CENTER_LEFT">
+                        <TextField fx:id="newGoalField" promptText="Enter a new fitness goal" prefWidth="400" />
+                        <Button text="Add Goal" onAction="#handleAddGoal" styleClass="secondary-button" />
+                     </HBox>
+                     
+                     <VBox fx:id="goalsList" spacing="8" styleClass="goals-list" />
+                  </VBox>
+               </VBox>
+               
+               <!-- Preferences -->
+               <VBox spacing="15" styleClass="profile-section">
+                  <Label text="Preferences" styleClass="section-title" />
+                  
+                  <GridPane hgap="20" vgap="15" alignment="CENTER_LEFT">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="NEVER" minWidth="120" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="300" />
+                     </columnConstraints>
+                     
+                     <Label text="Preferred Workout Time:" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="form-label" />
+                     <ComboBox fx:id="preferredTimeCombo" prefWidth="300" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                     
+                     <Label text="Preferred Workout Days:" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="form-label" />
+                     <HBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <CheckBox fx:id="prefMondayCheck" text="Mon" />
+                        <CheckBox fx:id="prefTuesdayCheck" text="Tue" />
+                        <CheckBox fx:id="prefWednesdayCheck" text="Wed" />
+                        <CheckBox fx:id="prefThursdayCheck" text="Thu" />
+                        <CheckBox fx:id="prefFridayCheck" text="Fri" />
+                        <CheckBox fx:id="prefSaturdayCheck" text="Sat" />
+                        <CheckBox fx:id="prefSundayCheck" text="Sun" />
+                     </HBox>
+                     
+                     <Label text="Notification Preferences:" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="form-label" />
+                     <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        <CheckBox fx:id="emailNotificationsCheck" text="Email Notifications" />
+                        <CheckBox fx:id="smsNotificationsCheck" text="SMS Notifications" />
+                        <CheckBox fx:id="reminderNotificationsCheck" text="Workout Reminders" />
+                        <CheckBox fx:id="classNotificationsCheck" text="Class Updates" />
+                     </VBox>
+                  </GridPane>
+               </VBox>
+               
+               <!-- Membership Information -->
+               <VBox spacing="15" styleClass="profile-section">
+                  <Label text="Membership Information" styleClass="section-title" />
+                  
+                  <GridPane hgap="20" vgap="15" alignment="CENTER_LEFT">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="NEVER" minWidth="120" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="250" />
+                        <ColumnConstraints hgrow="NEVER" minWidth="120" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="250" />
+                     </columnConstraints>
+                     
+                     <Label text="Membership Type:" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="form-label" />
+                     <Label fx:id="membershipTypeLabel" text="Basic" styleClass="info-label" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                     
+                     <Label text="Member Since:" GridPane.columnIndex="2" GridPane.rowIndex="0" styleClass="form-label" />
+                     <Label fx:id="memberSinceLabel" text="January 2024" styleClass="info-label" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+                     
+                     <Label text="Monthly Fee:" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="form-label" />
+                     <Label fx:id="monthlyFeeLabel" text="$29.99" styleClass="info-label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                     
+                     <Label text="Next Billing:" GridPane.columnIndex="2" GridPane.rowIndex="1" styleClass="form-label" />
+                     <Label fx:id="nextBillingLabel" text="February 1, 2024" styleClass="info-label" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  </GridPane>
+               </VBox>
+               
+               <!-- Action Buttons -->
+               <HBox spacing="15" alignment="CENTER">
+                  <Button text="Save Changes" onAction="#handleSaveChanges" styleClass="primary-button" />
+                  <Button text="Reset to Default" onAction="#handleResetToDefault" styleClass="secondary-button" />
+                  <Button text="Export Profile" onAction="#handleExportProfile" styleClass="secondary-button" />
+                  <Button text="Change Password" onAction="#handleChangePassword" styleClass="secondary-button" />
+               </HBox>
+               
+               <!-- Status Messages -->
+               <Label fx:id="statusLabel" text="" styleClass="status-label" />
+            </VBox>
+         </content>
+      </ScrollPane>
+   </children>
+</VBox>
