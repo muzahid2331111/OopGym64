@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.oopgym64.Trainer.DesignPersonalizedNutritionPlans"
+            prefHeight="600.0" prefWidth="650.0">
+
+    <!-- Title -->
+    <Label layoutX="140.0" layoutY="20.0" text="Design Personalized Nutrition Plan">
+        <font>
+            <Font name="Arial Bold" size="20.0"/>
+        </font>
+    </Label>
+
+    <!-- GridPane Form -->
+    <GridPane layoutX="50.0" layoutY="70.0" hgap="15.0" vgap="10.0">
+        <columnConstraints>
+            <ColumnConstraints halignment="RIGHT" minWidth="150.0"/>
+            <ColumnConstraints minWidth="300.0"/>
+        </columnConstraints>
+
+        <!-- Client Name -->
+        <Label text="Client Name:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="clientNameField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <!-- Nutrition Goal -->
+        <Label text="Nutrition Goal:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="goalDropdown" promptText="Select goal" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <!-- Calories and Macros -->
+        <Label text="Daily Calories:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="caloriesField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Protein (g):" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <TextField fx:id="proteinField" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+        <Label text="Carbs (g):" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <TextField fx:id="carbsField" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+        <Label text="Fats (g):" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+        <TextField fx:id="fatsField" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+        <!-- Restrictions -->
+        <Label text="Allergies / Restrictions:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+        <TextArea fx:id="restrictionsField" prefRowCount="2" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
+        <!-- Meal Plan -->
+        <Label text="Meal Plan Suggestions:" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+        <TextArea fx:id="mealPlanField" prefRowCount="3" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <!-- Save Button -->
+    <Button fx:id="saveButton" layoutX="250.0" layoutY="540.0" text="Save Nutrition Plan" prefWidth="150.0"/>
+
+</AnchorPane>

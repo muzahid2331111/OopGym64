@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.oopgym64.Admin.CoordinateCommunicationAndNotifications"
+            prefWidth="600.0" prefHeight="300.0">
+
+    <!-- Title -->
+    <Label text="Send Notification" layoutX="14.0" layoutY="14.0" />
+
+    <!-- Recipient -->
+    <Label text="To:" layoutX="14.0" layoutY="50.0"/>
+    <ComboBox fx:id="recipientSelector" layoutX="50.0" layoutY="46.0" prefWidth="200.0"/>
+
+    <!-- Message -->
+    <Label text="Message:" layoutX="14.0" layoutY="90.0"/>
+    <TextArea fx:id="messageArea" layoutX="14.0" layoutY="110.0" prefWidth="570.0" prefHeight="100.0" wrapText="true"/>
+
+    <!-- Channels -->
+    <HBox spacing="10.0" layoutX="14.0" layoutY="225.0">
+        <CheckBox fx:id="emailCheck" text="Email"/>
+        <CheckBox fx:id="smsCheck" text="SMS"/>
+        <CheckBox fx:id="inAppCheck" text="In-App"/>
+    </HBox>
+
+    <!-- Send -->
+    <Button fx:id="btnSend" text="Send" layoutX="14.0" layoutY="260.0" prefWidth="100.0"/>
+
+</AnchorPane>

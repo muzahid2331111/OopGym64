@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.oopgym64.Trainer.CreateAndManageWorkoutSessions"
+            prefHeight="600.0" prefWidth="650.0">
+
+    <!-- Title -->
+    <Label fx:id="titleLabel" layoutX="150.0" layoutY="20.0" text="Create and Manage Workout Sessions">
+        <font>
+            <Font name="Arial Bold" size="20.0"/>
+        </font>
+    </Label>
+
+    <!-- Form Grid -->
+    <GridPane layoutX="50.0" layoutY="70.0" hgap="15.0" vgap="10.0">
+        <columnConstraints>
+            <ColumnConstraints halignment="RIGHT" minWidth="150.0"/>
+            <ColumnConstraints minWidth="300.0"/>
+        </columnConstraints>
+
+        <!-- Session Info -->
+        <Label text="Session Title:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="sessionTitleField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Date:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <DatePicker fx:id="sessionDatePicker" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Start Time:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="startTimeField" promptText="e.g., 10:00 AM" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Duration (minutes):" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <TextField fx:id="durationField" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+        <Label text="Select Exercises:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <TextArea fx:id="exerciseListArea" prefRowCount="3" promptText="Enter exercises (comma-separated)" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+        <Label text="Assign to Client:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="clientDropdown" prefWidth="200" promptText="Select Client" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+        <Label text="Additional Notes:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+        <TextArea fx:id="notesField" prefRowCount="3" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <!-- Buttons -->
+    <HBox layoutX="170.0" layoutY="500.0" spacing="15.0">
+        <Button fx:id="createButton" text="Create Session" prefWidth="120.0"/>
+        <Button fx:id="updateButton" text="Update Session" prefWidth="120.0"/>
+        <Button fx:id="deleteButton" text="Delete Session" prefWidth="120.0"/>
+    </HBox>
+
+</AnchorPane>
+

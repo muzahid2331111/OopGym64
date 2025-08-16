@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.oopgym64.Admin.MonitorSystemUsageAndCompliance"
+            prefHeight="500.0" prefWidth="700.0">
+
+    <!-- Title -->
+    <Label layoutX="180.0" layoutY="10.0"
+           text="Monitor System Usage and Compliance"
+           style="-fx-font-size: 18px;"/>
+
+    <!-- Log Table -->
+    <TableView fx:id="logTable" layoutX="20.0" layoutY="50.0"
+               prefWidth="660.0" prefHeight="300.0">
+        <columns>
+            <TableColumn fx:id="timestampColumn" text="Timestamp" prefWidth="150"/>
+            <TableColumn fx:id="userColumn" text="User" prefWidth="150"/>
+            <TableColumn fx:id="activityColumn" text="Activity" prefWidth="200"/>
+            <TableColumn fx:id="statusColumn" text="Status" prefWidth="150"/>
+        </columns>
+    </TableView>
+
+    <!-- Buttons -->
+    <HBox layoutX="20.0" layoutY="370.0" spacing="10">
+        <Button fx:id="refreshButton" text="Refresh Logs"/>
+        <Button fx:id="flagSuspiciousButton" text="Flag Suspicious"/>
+        <Button fx:id="generateReportButton" text="Generate Compliance Report"/>
+    </HBox>
+
+    <!-- Status -->
+    <Label fx:id="statusLabel" layoutX="20.0" layoutY="430.0"
+           text="Status: Ready" style="-fx-text-fill: gray;"/>
+
+</AnchorPane>

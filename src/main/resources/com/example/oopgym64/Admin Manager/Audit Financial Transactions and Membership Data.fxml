@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.oopgym64.Admin.AuditFinancialTransactionsAndMembershipData"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <!-- Title -->
+    <Label text="Audit Financial Transactions Membership Data"
+           layoutX="14.0" layoutY="14.0" />
+
+    <!-- Table for audit data -->
+    <TableView fx:id="auditTable" layoutX="14.0" layoutY="50.0" prefWidth="570.0" prefHeight="250.0">
+        <columns>
+            <TableColumn fx:id="colDate" text="Date" prefWidth="100.0"/>
+            <TableColumn fx:id="colType" text="Type" prefWidth="120.0"/>
+            <TableColumn fx:id="colAmount" text="Amount" prefWidth="100.0"/>
+            <TableColumn fx:id="colStatus" text="Status" prefWidth="100.0"/>
+        </columns>
+    </TableView>
+
+    <!-- Buttons -->
+    <Button fx:id="btnFlag" text="Flag Selected" layoutX="14.0" layoutY="320.0" />
+    <Button fx:id="btnExport" text="Export" layoutX="120.0" layoutY="320.0" />
+
+</AnchorPane>

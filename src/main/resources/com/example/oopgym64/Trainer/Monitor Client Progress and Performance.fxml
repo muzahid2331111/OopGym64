@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="450.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oopgym64.Trainer.MonitorClientProgressAndPerformance">
+
+    <!-- Title -->
+    <Label layoutX="16.0" layoutY="14.0" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Monitor Client Progress Performance" />
+
+    <!-- Client Selection -->
+    <Label layoutX="16.0" layoutY="50.0" text="Select Client:" />
+    <ComboBox fx:id="clientSelector" layoutX="110.0" layoutY="46.0" prefWidth="200.0" />
+
+    <!-- Workout History Table -->
+    <Label layoutX="16.0" layoutY="90.0" text="Workout History" />
+    <TableView fx:id="workoutHistoryTable" layoutX="16.0" layoutY="110.0" prefHeight="150.0" prefWidth="320.0">
+        <columns>
+            <TableColumn fx:id="colDate" prefWidth="80.0" text="Date" />
+            <TableColumn fx:id="colSessionType" prefWidth="120.0" text="Session Type" />
+            <TableColumn fx:id="colCompletion" prefWidth="100.0" text="Completion" />
+        </columns>
+    </TableView>
+    <!-- Placeholder for chart area -->
+    <VBox layoutX="360.0" layoutY="110.0" prefHeight="150.0" prefWidth="320.0" spacing="4.0" />
+
+    <!-- Feedback / Notes -->
+    <Label layoutX="16.0" layoutY="275.0" text="Trainer Notes / Feedback" />
+    <TextArea fx:id="feedbackArea" layoutX="16.0" layoutY="295.0" prefHeight="110.0" prefWidth="420.0" promptText="Enter observations or adjustments..." wrapText="true" />
+
+    <!-- Actions -->
+    <Button fx:id="btnAdjustPlan" layoutX="450.0" layoutY="300.0" prefWidth="180.0" text="Adjust Workout Plan" />
+    <Button fx:id="btnScheduleFollowUp" layoutX="450.0" layoutY="340.0" prefWidth="180.0" text="Schedule Follow-Up" />
+    <Button fx:id="btnRefresh" layoutX="450.0" layoutY="380.0" prefWidth="180.0" text="Refresh Data" />
+
+</AnchorPane>

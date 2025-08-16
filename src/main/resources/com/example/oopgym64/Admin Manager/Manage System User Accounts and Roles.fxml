@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.oopgym64.Admin.ManageSystemUserAccountsAndRoles"
+            prefHeight="500.0" prefWidth="700.0">
+
+    <!-- Title -->
+    <Label layoutX="200.0" layoutY="10.0"
+           text="Manage Users"
+           style="-fx-font-size: 18px;"/>
+
+    <!-- Form -->
+    <Label layoutX="20.0" layoutY="50.0" text="Name:"/>
+    <TextField fx:id="nameField" layoutX="80.0" layoutY="45.0" prefWidth="150"/>
+
+    <Label layoutX="250.0" layoutY="50.0" text="Email:"/>
+    <TextField fx:id="emailField" layoutX="300.0" layoutY="45.0" prefWidth="150"/>
+
+    <Label layoutX="20.0" layoutY="90.0" text="Role:"/>
+    <ChoiceBox fx:id="roleChoiceBox" layoutX="80.0" layoutY="85.0" prefWidth="150"/>
+
+    <Label layoutX="250.0" layoutY="90.0" text="Password:"/>
+    <PasswordField fx:id="passwordField" layoutX="320.0" layoutY="85.0" prefWidth="130"/>
+
+    <Button fx:id="createUserButton" layoutX="470.0" layoutY="85.0" text="Add User"/>
+
+    <!-- User Table -->
+    <TableView fx:id="userTable" layoutX="20.0" layoutY="140.0" prefWidth="660.0" prefHeight="250.0">
+        <columns>
+            <TableColumn fx:id="nameColumn" text="Name" prefWidth="150"/>
+            <TableColumn fx:id="emailColumn" text="Email" prefWidth="200"/>
+            <TableColumn fx:id="roleColumn" text="Role" prefWidth="100"/>
+        </columns>
+    </TableView>
+
+    <!-- Buttons -->
+    <HBox layoutX="20.0" layoutY="410.0" spacing="10">
+        <Button fx:id="editButton" text="Edit"/>
+        <Button fx:id="resetPasswordButton" text="Reset Password"/>
+        <Button fx:id="deleteButton" text="Delete"/>
+    </HBox>
+
+</AnchorPane>

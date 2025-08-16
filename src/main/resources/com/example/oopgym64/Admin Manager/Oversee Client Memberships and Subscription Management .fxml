@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.oopgym64.Admin Manager.OverseeClientMemberships"
+            prefHeight="500.0" prefWidth="700.0">
+
+    <!-- Title -->
+    <Label layoutX="160.0" layoutY="10.0"
+           text="Manage Client Memberships"
+           style="-fx-font-size: 18px;"/>
+
+    <!-- Search -->
+    <Label layoutX="20.0" layoutY="50.0" text="Search Client:"/>
+    <TextField fx:id="searchField" layoutX="100.0" layoutY="45.0" prefWidth="200.0"/>
+    <Button fx:id="searchButton" layoutX="310.0" layoutY="45.0" text="Search"/>
+
+    <!-- Membership Info Table -->
+    <TableView fx:id="membershipTable" layoutX="20.0" layoutY="90.0"
+               prefWidth="660.0" prefHeight="250.0">
+        <columns>
+            <TableColumn fx:id="clientNameColumn" text="Client Name" prefWidth="150"/>
+            <TableColumn fx:id="planTypeColumn" text="Plan Type" prefWidth="150"/>
+            <TableColumn fx:id="statusColumn" text="Status" prefWidth="100"/>
+            <TableColumn fx:id="endDateColumn" text="End Date" prefWidth="100"/>
+            <TableColumn fx:id="paymentStatusColumn" text="Payment" prefWidth="150"/>
+        </columns>
+    </TableView>
+
+    <!-- Actions -->
+    <HBox layoutX="20.0" layoutY="360.0" spacing="10">
+        <Button fx:id="renewButton" text="Renew"/>
+        <Button fx:id="upgradeButton" text="Upgrade"/>
+        <Button fx:id="suspendButton" text="Suspend"/>
+        <Button fx:id="cancelButton" text="Cancel"/>
+    </HBox>
+
+    <!-- Summary Label -->
+    <Label fx:id="summaryLabel" layoutX="20.0" layoutY="420.0"
+           text="Status: Ready" style="-fx-text-fill: gray;"/>
+
+</AnchorPane>

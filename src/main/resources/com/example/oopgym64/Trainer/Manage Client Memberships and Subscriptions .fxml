@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.oopgym64.Trainer.ManageClientMembershipsAndSubscriptions"
+            prefHeight="600.0" prefWidth="650.0">
+
+    <!-- Title -->
+    <Label layoutX="120.0" layoutY="20.0" text="Manage Client Memberships Subscriptions">
+        <font>
+            <Font name="Arial Bold" size="20.0"/>
+        </font>
+    </Label>
+
+    <!-- GridPane for Form -->
+    <GridPane layoutX="50.0" layoutY="70.0" hgap="15.0" vgap="10.0">
+        <columnConstraints>
+            <ColumnConstraints halignment="RIGHT" minWidth="150.0"/>
+            <ColumnConstraints minWidth="300.0"/>
+        </columnConstraints>
+
+        <!-- Client Info -->
+        <Label text="Client ID:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="clientIdField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Client Name:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="clientNameField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <!-- Membership Type -->
+        <Label text="Membership Type:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="membershipTypeDropdown" promptText="Select Type" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <!-- Start & End Dates -->
+        <Label text="Start Date:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <DatePicker fx:id="startDatePicker" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+        <Label text="End Date:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <DatePicker fx:id="endDatePicker" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+        <!-- Payment Status -->
+        <Label text="Payment Status:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="paymentStatusDropdown" promptText="Paid / Unpaid" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+        <!-- Notes -->
+        <Label text="Notes:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+        <TextArea fx:id="notesField" prefRowCount="3" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <!-- Buttons -->
+    <HBox layoutX="170.0" layoutY="530.0" spacing="15.0">
+        <Button fx:id="saveButton" text="Save" prefWidth="120.0"/>
+        <Button fx:id="updateButton" text="Update" prefWidth="120.0"/>
+        <Button fx:id="deleteButton" text="Delete" prefWidth="120.0"/>
+    </HBox>
+
+</AnchorPane>

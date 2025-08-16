@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.oopgym64.Trainer.TrackClientProgressAndGenerateReports"
+            prefWidth="700.0" prefHeight="450.0">
+
+    <!-- Title -->
+    <Label text="Track Client Progress Generate Reports" layoutX="16.0" layoutY="14.0" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+    <!-- Client Selection -->
+    <Label text="Client:" layoutX="16.0" layoutY="50.0"/>
+    <ComboBox fx:id="clientSelector" layoutX="70.0" layoutY="46.0" prefWidth="220.0"/>
+
+    <!-- Progress Summary -->
+    <VBox spacing="6.0" layoutX="16.0" layoutY="90.0" prefWidth="420.0">
+        <Label text="Progress Summary" style="-fx-font-weight: bold;"/>
+        <HBox spacing="10.0">
+            <VBox spacing="4.0">
+                <Label text="Workout Completion"/>
+                <ProgressBar fx:id="workoutCompletionBar" prefWidth="180.0"/>
+            </VBox>
+            <VBox spacing="4.0">
+                <Label text="Nutrition Adherence"/>
+                <ProgressBar fx:id="nutritionAdherenceBar" prefWidth="180.0"/>
+            </VBox>
+        </HBox>
+        <HBox spacing="10.0">
+            <VBox spacing="4.0">
+                <Label text="Strength"/>
+                <ProgressBar fx:id="strengthBar" prefWidth="180.0"/>
+            </VBox>
+            <VBox spacing="4.0">
+                <Label text="Endurance"/>
+                <ProgressBar fx:id="enduranceBar" prefWidth="180.0"/>
+            </VBox>
+        </HBox>
+    </VBox>
+
+    <!-- Report options -->
+    <VBox spacing="8.0" layoutX="460.0" layoutY="90.0" prefWidth="210.0">
+        <Label text="Report Generation" style="-fx-font-weight: bold;"/>
+        <HBox spacing="6.0">
+            <Label text="Timeframe:"/>
+            <ComboBox fx:id="timeframeSelector" prefWidth="120.0"/>
+        </HBox>
+        <CheckBox fx:id="includeGoalsCheck" text="Include Goals"/>
+        <CheckBox fx:id="includeTrendChartsCheck" text="Include Trend Charts"/>
+        <Button fx:id="btnGenerate" text="Generate Report" prefWidth="180.0"/>
+        <Button fx:id="btnSchedule" text="Schedule Auto Report" prefWidth="180.0"/>
+        <Button fx:id="btnDownload" text="Download Latest" prefWidth="180.0"/>
+    </VBox>
+
+    <!-- Notes -->
+    <Label text="Trainer Notes:" layoutX="16.0" layoutY="300.0"/>
+    <TextArea fx:id="notesArea" layoutX="16.0" layoutY="320.0" prefWidth="420.0" prefHeight="100.0" wrapText="true" promptText="Add comments or observations..."/>
+
+</AnchorPane>
