@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="485.0" prefWidth="450" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Receptionist.RespondToPhoneIquiriesController">
+    <children>
+        <TextField fx:id="txtCallerName" layoutX="20.0" layoutY="117.0" promptText="Caller Name" />
+        <Button layoutX="20.0" layoutY="309.0" onAction="#SearchButtonOnClick" text="Search Related Info" />
+        <Label fx:id="lblSearchResult" layoutX="30" layoutY="210" />
+      <TextField fx:id="inqueryDetailsTextField" layoutX="20.0" layoutY="168.0" prefHeight="118.0" prefWidth="368.0" promptText="inquiry details" />
+      <Text layoutX="119.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Inqueries">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Text>
+      <Label fx:id="outputSearchedInfoLabel" layoutX="24.0" layoutY="364.0" prefHeight="62.0" prefWidth="402.0" />
+      <Button layoutX="14.0" layoutY="445.0" mnemonicParsing="false" onAction="#backButtonOnClick" text="&lt;&lt;Back" />
+    </children>
+</AnchorPane>

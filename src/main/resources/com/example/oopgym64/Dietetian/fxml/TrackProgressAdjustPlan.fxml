@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="584.0" prefWidth="583.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Dietetian.TrackProgressAdjustPlanController">
+    <children>
+        <TextField fx:id="memberIDTextField" layoutX="37.0" layoutY="124.0" promptText="Member ID" />
+        <Button layoutX="437.0" layoutY="172.0" onAction="#trackProgressButtonOnClick" text="Track Progress" />
+        <TableView fx:id="trackProgressTableView" layoutX="36.0" layoutY="220.0" prefHeight="193.0" prefWidth="512.0">
+            <columns>
+            <TableColumn fx:id="memberIDCol" prefWidth="101.60003280639648" text="Member ID" />
+                <TableColumn fx:id="dateCol" prefWidth="91.20001220703125" text="Date" />
+            <TableColumn fx:id="heightCol" prefWidth="87.20002746582031" text="Height" />
+            <TableColumn fx:id="weightCol" prefWidth="84.7999267578125" text="Weight" />
+            <TableColumn fx:id="bmiCol" prefWidth="74.4000244140625" text="BMI" />
+            <TableColumn fx:id="fatCol" prefWidth="75.0" text="Fat%" />
+            </columns>
+        </TableView>
+        <Button layoutX="36.0" layoutY="429.0" onAction="#adjustPlanButtonOnClick" text="Adjust Plan" />
+      <TextField fx:id="weightTextField" layoutX="217.0" layoutY="172.0" promptText="Weight" />
+      <TextField fx:id="heightTextField" layoutX="37.0" layoutY="172.0" promptText="Height" />
+      <Label fx:id="outputRecomandLabel" layoutX="36.0" layoutY="472.0" prefHeight="46.0" prefWidth="512.0" />
+      <DatePicker fx:id="dateDatePicker" layoutX="217.0" layoutY="124.0" promptText="select date" />
+      <Text layoutX="135.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Track Progress &amp; Adjust Plan">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Text>
+      <Button layoutX="14.0" layoutY="544.0" mnemonicParsing="false" onAction="#backButtonOnClick" text="&lt;&lt;Back" />
+    </children>
+</AnchorPane>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="508.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HomePage.DashBoard">
+   <children>
+      <Button layoutX="175.0" layoutY="40.0" mnemonicParsing="false" onAction="#currentDietaryHabitsButtonOnClick" prefHeight="26.0" prefWidth="228.0" text="Client's Current Dietary Habits" />
+      <Button layoutX="175.0" layoutY="94.0" mnemonicParsing="false" onAction="#fitnessNutritionButtonOnClick" prefHeight="26.0" prefWidth="228.0" text="Fitness &amp; Nutrition Objectives" />
+      <Button layoutX="175.0" layoutY="144.0" mnemonicParsing="false" onAction="#buildNutritionPlanButtonOnClick" prefHeight="26.0" prefWidth="228.0" text="Build personalized Nutrition Plan" />
+      <Button layoutX="175.0" layoutY="200.0" mnemonicParsing="false" onAction="#supplementStrategyButtonOnClick" prefHeight="26.0" prefWidth="228.0" text="Supplement Strategy &amp; Integration" />
+      <Button layoutX="175.0" layoutY="255.0" mnemonicParsing="false" onAction="#trackProgressButtonOnClick" prefHeight="26.0" prefWidth="228.0" text="Track Progress &amp; Adjust Plan" />
+      <Button layoutX="175.0" layoutY="307.0" mnemonicParsing="false" onAction="#coordinateWithGymButtonOnClick" prefHeight="26.0" prefWidth="228.0" text="Coordinate with Gym Training Program" />
+      <Button layoutX="175.0" layoutY="359.0" mnemonicParsing="false" onAction="#educateNutritionPrinciplesButtonOnClick" prefHeight="26.0" prefWidth="228.0" text="Educate on Nutrition Principles" />
+      <Button layoutX="175.0" layoutY="416.0" mnemonicParsing="false" onAction="#updateProfileButtonOnClick" prefHeight="26.0" prefWidth="228.0" text="Update &amp; Maintain Client Profile" />
+      <Button layoutX="25.0" layoutY="467.0" mnemonicParsing="false" onAction="#backButtonOnClick" text="&lt;&lt;Back" />
+   </children>
+</AnchorPane>

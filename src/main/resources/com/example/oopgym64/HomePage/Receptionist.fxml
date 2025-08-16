@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="508.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HomePage.DashBoard">
+   <children>
+      <Button layoutX="175.0" layoutY="40.0" mnemonicParsing="false" onAction="#registerNewmemberButtonOnClick" prefHeight="26.0" prefWidth="228.0" text="Register New Member" />
+      <Button layoutX="175.0" layoutY="94.0" mnemonicParsing="false" onAction="#scheduleTrialSessionsButtonOnClick" prefHeight="26.0" prefWidth="228.0" text="Schedule Trial Sessions" />
+      <Button layoutX="175.0" layoutY="144.0" mnemonicParsing="false" onAction="#visitorCheckinsButtonOnClick" prefHeight="26.0" prefWidth="228.0" text="Visitor Check-ins" />
+      <Button layoutX="175.0" layoutY="200.0" mnemonicParsing="false" onAction="#bookingIssuesButtonOnClick" prefHeight="26.0" prefWidth="228.0" text="Booking Issues" />
+      <Button layoutX="175.0" layoutY="255.0" mnemonicParsing="false" onAction="#lostFoundButtonOnClick" prefHeight="26.0" prefWidth="228.0" text="Lost &amp; Found" />
+      <Button layoutX="175.0" layoutY="307.0" mnemonicParsing="false" onAction="#phoneIquiriesButtonOnClick" prefHeight="26.0" prefWidth="228.0" text="Phone Iquiries" />
+      <Button layoutX="175.0" layoutY="359.0" mnemonicParsing="false" onAction="#walkinMembershipButtonOnClick" prefHeight="26.0" prefWidth="228.0" text="Walk-in Membership Queries" />
+      <Button layoutX="175.0" layoutY="416.0" mnemonicParsing="false" onAction="#frontDeskSuppliesButtonOnClick" prefHeight="26.0" prefWidth="228.0" text="Front Desk Supplies" />
+      <Button layoutX="25.0" layoutY="467.0" mnemonicParsing="false" onAction="#backButtonOnClick" text="&lt;&lt;Back" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="408.0" prefWidth="520" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Dietetian.BuildNutritionPlanController">
+    <children>
+        <TextField fx:id="memberIDTextField" layoutX="30.0" layoutY="118.0" promptText="Member ID" />
+        <ComboBox fx:id="mealPlanComboBox" layoutX="218.0" layoutY="118.0" promptText="Select Meal Plan" />
+        <TextArea fx:id="planDetailsTextArea" layoutX="30.0" layoutY="167.0" prefHeight="120" prefWidth="440" promptText="Nutrition Plan Details" />
+        <Button layoutX="36.0" layoutY="309.0" onAction="#buildPlanButtonOnClick" text="Build Plan" />
+      <Text layoutX="138.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Build Nutrition Plan">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Text>
+      <Button layoutX="18.0" layoutY="362.0" mnemonicParsing="false" onAction="#backButtonOnClick" text="&lt;&lt;Back" />
+    </children>
+</AnchorPane>

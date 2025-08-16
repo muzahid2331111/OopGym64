@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="437.0" prefWidth="427.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Dietetian.SupplementStrategyController">
+    <children>
+        <TextField fx:id="memberIDTextField" layoutX="30.0" layoutY="114.0" promptText="Member ID" />
+        <ComboBox fx:id="supplementComboBox" layoutX="30.0" layoutY="162.0" prefWidth="200" promptText="Select Supplement" />
+        <TextField fx:id="dosageTextField" layoutX="205.0" layoutY="210.0" promptText="Dosage" />
+        <TextField fx:id="timingTextField" layoutX="30.0" layoutY="210.0" promptText="Timing (e.g. post-workout)" />
+        <Button layoutX="30.0" layoutY="265.0" onAction="#saveStrategyButtonOnClick" text="Save Supplement Plan" />
+      <Label fx:id="outputAdviceLabel" layoutX="30.0" layoutY="302.0" prefHeight="62.0" prefWidth="382.0" />
+      <Text layoutX="110.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Suppliment Strategy">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Text>
+      <Button layoutX="14.0" layoutY="397.0" mnemonicParsing="false" onAction="#backButtonOnClick" text="&lt;&lt;Back" />
+    </children>
+</AnchorPane>

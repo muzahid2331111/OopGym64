@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="466.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HomePage.DashBoard">
+   <children>
+      <Button layoutX="175.0" layoutY="40.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="228.0" text="Basic Member" />
+      <Button layoutX="175.0" layoutY="94.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="228.0" text="Premium Member" />
+      <Button layoutX="175.0" layoutY="144.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="228.0" text="Trainer" />
+      <Button layoutX="175.0" layoutY="200.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="228.0" text="Admin Manager" />
+      <Button layoutX="175.0" layoutY="255.0" mnemonicParsing="false" onAction="#receptionistButtonOnClick" prefHeight="26.0" prefWidth="228.0" text="Receptionist" />
+      <Button layoutX="175.0" layoutY="307.0" mnemonicParsing="false" onAction="#dietitianButtonOnClick" prefHeight="26.0" prefWidth="228.0" text="Dietitian" />
+      <Button layoutX="175.0" layoutY="359.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="228.0" text="Finance Officer" />
+      <Button layoutX="175.0" layoutY="416.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="228.0" text="System Administrator" />
+   </children>
+</AnchorPane>

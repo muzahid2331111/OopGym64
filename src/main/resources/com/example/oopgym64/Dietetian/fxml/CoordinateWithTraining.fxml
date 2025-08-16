@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="537.0" prefWidth="500" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Dietetian.CoordinateWithTrainingController">
+    <children>
+        <TextArea fx:id="discussionTextArea" layoutX="29.0" layoutY="220.0" prefHeight="62.0" prefWidth="400" promptText="Discussion Notes" />
+        <Button layoutX="30.0" layoutY="302.0" onAction="#sendCoordinationButtonOnClick" text="Send Coordination Message" />
+      <Text layoutX="46.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Coordinate with Gym Training Program">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Text>
+      <TextField fx:id="scheduleTextField" layoutX="211.0" layoutY="173.0" promptText="Workout Schedule" />
+      <TextField fx:id="dietaryTimingTextField" layoutX="30.0" layoutY="173.0" promptText="Dietary Timing" />
+      <Label fx:id="outputShowMealLabel" layoutX="29.0" layoutY="393.0" prefHeight="52.0" prefWidth="410.0" text="show suggested meal" />
+      <Button layoutX="29.0" layoutY="346.0" onAction="#validateButtonOnClick" prefHeight="26.0" prefWidth="409.0" text="Validate allignment between training volume and nutrition" />
+      <TextField fx:id="memberIDTextField" layoutX="30.0" layoutY="126.0" promptText="member ID" />
+      <Button layoutX="20.0" layoutY="490.0" mnemonicParsing="false" onAction="#backButtonOnClick" text="&lt;&lt;Back" />
+    </children>
+</AnchorPane>
