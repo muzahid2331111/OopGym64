@@ -13,10 +13,19 @@ import java.io.IOException;
 public class Login {
 
     @javafx.fxml.FXML
+    private TextField confirmPassTextField;
+    @javafx.fxml.FXML
+    private TextField phoneNumTextField;
+    @javafx.fxml.FXML
+    private TextField passowardTextField;
+    @javafx.fxml.FXML
+    private TextField enterEmailTextField;
+
+    @javafx.fxml.FXML
     public void initialize() {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void createProfileButtonOnClick(ActionEvent actionEvent) throws IOException{
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
@@ -26,7 +35,7 @@ public class Login {
         stage.show();
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void loginButtonOnClick(ActionEvent actionEvent) throws IOException{
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
@@ -36,7 +45,7 @@ public class Login {
         stage.show();
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void logoutButtonOnClick(ActionEvent actionEvent) throws IOException{
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("logOutProfile.fxml"));
@@ -59,5 +68,20 @@ public class Login {
         String email = enterEmailTextField.getText();
         String passoward = passowardTextField.getText();
 
+    }
+
+    @javafx.fxml.FXML
+    public void createButtonOnClick(ActionEvent actionEvent) throws IOException{
+        Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("DashBoard.fxml"));
+        Scene scene = new Scene(root);
+        stage.setTitle("Vogue Gold's Gym Lifestyle Lounge");
+        stage.setScene(scene);
+        stage.show();
+
+        String email = enterEmailTextField.getText();
+        int phone = Integer.parseInt(phoneNumTextField.getText());
+        String passoward = passowardTextField.getText();
+        String confirmmPass = confirmPassTextField.getText();
     }
 }
