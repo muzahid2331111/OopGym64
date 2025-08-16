@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gym_simulation_2210345.controller.WorkoutPlanController">
+   <children>
+      <!-- Header -->
+      <HBox styleClass="header" alignment="CENTER_LEFT">
+         <padding>
+            <Insets top="15" right="20" bottom="15" left="20" />
+         </padding>
+         <children>
+            <Button text="← Back to Dashboard" onAction="#handleBackToDashboard" styleClass="back-button" />
+            <Label text="Workout Plan Management" styleClass="page-title" />
+         </children>
+      </HBox>
+      
+      <!-- Main Content -->
+      <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+         <content>
+            <VBox spacing="25" styleClass="workout-container">
+               <padding>
+                  <Insets top="20" right="20" bottom="20" left="20" />
+               </padding>
+               
+               <!-- Current Plan Section -->
+               <VBox spacing="15" styleClass="plan-section">
+                  <Label text="Current Workout Plan" styleClass="section-title" />
+                  
+                  <VBox fx:id="currentPlanBox" spacing="10" styleClass="current-plan-box">
+                     <Label fx:id="planStatusLabel" text="No active workout plan" styleClass="status-label" />
+                     <TextArea fx:id="workoutPlanArea" prefHeight="200" editable="false" styleClass="workout-plan-area" />
+                  </VBox>
+               </VBox>
+               
+               <!-- Create New Plan Section -->
+               <VBox spacing="15" styleClass="plan-section">
+                  <Label text="Create New Workout Plan" styleClass="section-title" />
+                  
+                  <GridPane hgap="20" vgap="15" alignment="CENTER_LEFT">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="NEVER" minWidth="120" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="300" />
+                     </columnConstraints>
+                     
+                     <Label text="Fitness Goal:" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="form-label" />
+                     <TextField fx:id="goalField" promptText="e.g., Build muscle, Lose weight, Improve endurance" prefWidth="300" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                     
+                     <Label text="Experience Level:" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="form-label" />
+                     <ComboBox fx:id="experienceCombo" prefWidth="300" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                     
+                     <Label text="Workout Days:" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="form-label" />
+                     <HBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        <CheckBox fx:id="mondayCheck" text="Mon" />
+                        <CheckBox fx:id="tuesdayCheck" text="Tue" />
+                        <CheckBox fx:id="wednesdayCheck" text="Wed" />
+                        <CheckBox fx:id="thursdayCheck" text="Thu" />
+                        <CheckBox fx:id="fridayCheck" text="Fri" />
+                        <CheckBox fx:id="saturdayCheck" text="Sat" />
+                        <CheckBox fx:id="sundayCheck" text="Sun" />
+                     </HBox>
+                     
+                     <Label text="Session Duration:" GridPane.columnIndex="0" GridPane.rowIndex="3" styleClass="form-label" />
+                     <ComboBox fx:id="durationCombo" prefWidth="300" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  </GridPane>
+                  
+                  <HBox spacing="15" alignment="CENTER">
+                     <Button fx:id="createPlanButton" text="Create Plan" onAction="#handleCreatePlan" styleClass="primary-button" />
+                     <Button fx:id="generateAIPlanButton" text="Generate AI Plan" onAction="#handleGenerateAIPlan" styleClass="ai-button" />
+                  </HBox>
+               </VBox>
+               
+               <!-- Plan Details Section -->
+               <VBox fx:id="planDetailsSection" spacing="15" styleClass="plan-section" visible="false">
+                  <Label text="Plan Details" styleClass="section-title" />
+                  
+                  <TabPane fx:id="planTabPane" prefHeight="400">
+                     <tabs>
+                        <Tab text="Weekly Schedule" closable="false">
+                           <content>
+                              <VBox spacing="15">
+                                 <HBox spacing="20" alignment="CENTER">
+                                    <Button text="Previous Week" onAction="#handlePreviousWeek" styleClass="nav-button" />
+                                    <Label fx:id="weekLabel" text="Week of..." styleClass="week-label" />
+                                    <Button text="Next Week" onAction="#handleNextWeek" styleClass="nav-button" />
+                                 </HBox>
+                                 <VBox fx:id="weeklyScheduleBox" spacing="10" />
+                              </VBox>
+                           </content>
+                        </Tab>
+                        
+                        <Tab text="Exercises" closable="false">
+                           <content>
+                              <VBox spacing="15">
+                                 <HBox spacing="15" alignment="CENTER_LEFT">
+                                    <Label text="Day:" />
+                                    <ComboBox fx:id="dayCombo" prefWidth="120" />
+                                    <Button text="Add Exercise" onAction="#handleAddExercise" styleClass="secondary-button" />
+                                 </HBox>
+                                 <ListView fx:id="exercisesList" prefHeight="300" />
+                                 <HBox spacing="10" alignment="CENTER">
+                                    <Button text="Edit Exercise" onAction="#handleEditExercise" styleClass="secondary-button" />
+                                    <Button text="Remove Exercise" onAction="#handleRemoveExercise" styleClass="danger-button" />
+                                 </HBox>
+                              </VBox>
+                           </content>
+                        </Tab>
+                        
+                        <Tab text="Progress Notes" closable="false">
+                           <content>
+                              <VBox spacing="15">
+                                 <TextArea fx:id="progressNotesArea" promptText="Add notes about your progress, challenges, or achievements..." prefHeight="300" />
+                                 <Button text="Save Notes" onAction="#handleSaveNotes" styleClass="primary-button" />
+                              </VBox>
+                           </content>
+                        </Tab>
+                     </tabs>
+                  </TabPane>
+               </VBox>
+               
+               <!-- Action Buttons -->
+               <HBox spacing="15" alignment="CENTER">
+                  <Button fx:id="editPlanButton" text="Edit Plan" onAction="#handleEditPlan" styleClass="secondary-button" />
+                  <Button fx:id="deactivatePlanButton" text="Deactivate Plan" onAction="#handleDeactivatePlan" styleClass="danger-button" />
+                  <Button fx:id="exportPlanButton" text="Export Plan" onAction="#handleExportPlan" styleClass="secondary-button" />
+               </HBox>
+               
+               <!-- Status Messages -->
+               <Label fx:id="statusLabel" text="" styleClass="status-label" />
+            </VBox>
+         </content>
+      </ScrollPane>
+   </children>
+   
+   <stylesheets>
+      <String fx:value="styles.css" />
+   </stylesheets>
+</VBox>

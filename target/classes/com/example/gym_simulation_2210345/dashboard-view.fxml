@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gym_simulation_2210345.controller.DashboardController">
+   <children>
+      <!-- Header Section -->
+      <HBox styleClass="header" alignment="CENTER_LEFT">
+         <padding>
+            <Insets top="15" right="20" bottom="15" left="20" />
+         </padding>
+         <children>
+            <VBox spacing="5">
+               <Label fx:id="welcomeLabel" text="Welcome, User!" styleClass="welcome-label" />
+               <HBox spacing="20">
+                  <Label fx:id="membershipTypeLabel" text="Membership: Basic" styleClass="membership-label" />
+                  <Label fx:id="monthlyFeeLabel" text="Monthly Fee: $29.99" styleClass="fee-label" />
+               </HBox>
+            </VBox>
+         </children>
+      </HBox>
+      
+      <!-- Main Dashboard Content -->
+      <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+         <content>
+            <VBox spacing="20" styleClass="dashboard-content">
+               <padding>
+                  <Insets top="20" right="20" bottom="20" left="20" />
+               </padding>
+               
+               <!-- Membership Features -->
+               <Label text="Your Membership Features" styleClass="section-title" />
+               <VBox fx:id="featuresList" spacing="8" styleClass="features-list" />
+               
+               <Separator />
+               
+               <!-- Quick Actions -->
+               <Label text="Quick Actions" styleClass="section-title" />
+               <GridPane hgap="15" vgap="15" alignment="CENTER">
+                  <columnConstraints>
+                     <ColumnConstraints hgrow="SOMETIMES" minWidth="150" />
+                     <ColumnConstraints hgrow="SOMETIMES" minWidth="150" />
+                     <ColumnConstraints hgrow="SOMETIMES" minWidth="150" />
+                  </columnConstraints>
+                  
+                  <Button text="Book Session" onAction="#handleBookSession" styleClass="action-button" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                  <Button text="View Classes" onAction="#handleViewClasses" styleClass="action-button" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                  <Button text="Update Profile" onAction="#handleUpdateProfile" styleClass="action-button" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                  
+                  <Button text="Workout Plan" onAction="#handleWorkoutPlan" styleClass="action-button" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                  <Button text="Track Progress" onAction="#handleTrackProgress" styleClass="action-button" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Button text="Premium Features" onAction="#handlePremiumFeatures" styleClass="action-button" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+               </GridPane>
+               
+               <Separator />
+               
+               <!-- Recent Activity -->
+               <Label text="Recent Activity" styleClass="section-title" />
+               <VBox fx:id="recentActivityList" spacing="8" styleClass="activity-list" />
+            </VBox>
+         </content>
+      </ScrollPane>
+   </children>
+   
+   <stylesheets>
+      <String fx:value="styles.css" />
+   </stylesheets>
+</VBox>
