@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+    <?import javafx.scene.layout.*?>
+    <?import javafx.scene.control.*?>
+
+    <AnchorPane xmlns:fx="http://javafx.com/fxml"
+                fx:controller="controller.U7g2TrackmembershippaymentsduesController"
+                prefWidth="520" prefHeight="360">
+        <VBox spacing="10" alignment="CENTER" layoutX="20" layoutY="20" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10">
+            <Label text="Track Membership Payments and Dues" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+            <HBox spacing="8">
+            <TextField fx:id="memberIdField" promptText="memberId" />
+            <TextField fx:id="paymentAmountField" promptText="paymentAmount" />
+            </HBox>
+            <HBox spacing="8">
+                <Button text="Validate" onAction="#validateInputs"/>
+                <Button text="Process" onAction="#processData"/>
+                <Button text="Verify" onAction="#verifyOrCheck"/>
+            </HBox>
+            <Label fx:id="statusLabel" wrapText="true"/>
+        </VBox>
+    </AnchorPane>

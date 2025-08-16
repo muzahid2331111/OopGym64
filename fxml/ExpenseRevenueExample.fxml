@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.ExpenseRevenueExampleController"
+            prefWidth="400" prefHeight="300">
+
+    <VBox spacing="10" alignment="CENTER" layoutX="20" layoutY="20">
+        <Label text="Monitor Daily Revenue and Expenses (Example)" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+        <HBox spacing="5">
+            <TextField fx:id="expenseField" promptText="Enter Expense Amount"/>
+            <TextField fx:id="expenseCategoryField" promptText="Expense Category"/>
+            <Button text="Record Expense" onAction="#recordExpense"/>
+        </HBox>
+
+        <HBox spacing="5">
+            <TextField fx:id="revenueField" promptText="Enter Revenue Amount"/>
+            <TextField fx:id="revenueSourceField" promptText="Revenue Source"/>
+            <Button text="Record Revenue" onAction="#recordRevenue"/>
+        </HBox>
+
+        <Label fx:id="reportLabel" wrapText="true" style="-fx-text-fill: darkblue;"/>
+    </VBox>
+</AnchorPane>
