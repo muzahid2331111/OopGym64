@@ -52,7 +52,7 @@ ArrayList<Training> trainingArrayList = new ArrayList<>();
         String diettiming = dietaryTimingTextField.getText();
         String discussion = discussionTextArea.getText();
         String schedule = scheduleTextField.getText();
-        Dietetian.Training training = new Dietetian.Training(memberID, diettiming, discussion, schedule);
+        Training training = new Training(memberID, diettiming, discussion, schedule);
         trainingArrayList.add(training);
 
 
