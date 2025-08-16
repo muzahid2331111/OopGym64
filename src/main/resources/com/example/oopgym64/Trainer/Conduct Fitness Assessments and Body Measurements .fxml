@@ -75,4 +75,9 @@
     <!-- Submit Button -->
     <Button fx:id="submitButton" layoutX="230.0" layoutY="550.0" prefWidth="140.0" text="Submit Assessment" />
 
+    <!-- Buttons -->
+    <Button fx:id="btnFlag" layoutX="14.0" layoutY="320.0" text="Flag Selected" />
+    <Button fx:id="btnExport" layoutX="120.0" layoutY="320.0" text="Export" />
+    <Button fx:id="backButtonOnClick" layoutX="510.0" layoutY="345.0" mnemonicParsing="false" text="Back" />
+
 </AnchorPane>

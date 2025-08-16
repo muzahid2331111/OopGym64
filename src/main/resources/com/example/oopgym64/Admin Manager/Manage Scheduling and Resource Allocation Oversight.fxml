@@ -31,4 +31,9 @@
     <Button fx:id="btnEdit" text="Edit Allocation" layoutX="440.0" layoutY="150.0" prefWidth="120.0"/>
     <Button fx:id="btnResolve" text="Resolve Conflict" layoutX="440.0" layoutY="190.0" prefWidth="120.0"/>
 
+    <!-- Buttons -->
+    <Button fx:id="btnFlag" layoutX="14.0" layoutY="320.0" text="Flag Selected" />
+    <Button fx:id="btnExport" layoutX="120.0" layoutY="320.0" text="Export" />
+    <Button fx:id="backButtonOnClick" layoutX="510.0" layoutY="345.0" mnemonicParsing="false" text="Back" />
+
 </AnchorPane>
